@@ -1,0 +1,5 @@
+Field Details
+
+AnnounceString string: The tracker URL that facilitates peer discovery for downloading/uploading files.  
+InfoHash [20]byte: A 20-byte SHA-1 hash uniquely identifying the torrent. It's derived from the info dictionary in the .torrent file.  
+PieceHash [][20]byte: A slice where each element is a 20-byte SHA-1 hash representing the checksum of a specific piece of the file. These hashes are used for integrity verification.  
