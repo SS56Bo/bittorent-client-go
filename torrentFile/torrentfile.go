@@ -8,3 +8,15 @@ type TorrentFile struct {
 	Length         int
 	Name           string
 }
+
+type bencodeInfo struct {
+	Pieces      string
+	PieceLength int
+	Length      int
+	Name        string
+}
+
+type bencodeTorrent struct {
+	Announce string
+	Info     bencodeInfo
+}
