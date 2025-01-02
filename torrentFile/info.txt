@@ -1,5 +1,14 @@
 Field Details
 
+TorrentFile Struct
+
 AnnounceString string: The tracker URL that facilitates peer discovery for downloading/uploading files.  
 InfoHash [20]byte: A 20-byte SHA-1 hash uniquely identifying the torrent. It's derived from the info dictionary in the .torrent file.  
-PieceHash [][20]byte: A slice where each element is a 20-byte SHA-1 hash representing the checksum of a specific piece of the file. These hashes are used for integrity verification.  
+PieceHash [][20]byte: A slice where each element is a 20-byte SHA-1 hash representing the checksum of a specific piece of the file. These hashes are used for integrity verification. 
+PieceLength int: The size (in bytes) of each piece of the file(s). Most pieces will have this size, except the last piece, which might be smaller.
+Length int: The total size (in bytes) of the file(s) represented by the torrent.  
+Name string: The name of the main file or folder the torrent refers to.
+
+bencodeInfo Struct
+
+Pieces string: This contains all the SHA-1 hashes for the file pieces concatenated into a single string. Each hash is 20 bytes long.
