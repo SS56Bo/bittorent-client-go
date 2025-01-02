@@ -1,5 +1,7 @@
 package main
 
+import "io"
+
 type TorrentFile struct {
 	AnnounceString string
 	InfoHash       [20]byte //	info hash is a cryptographic hash (usually SHA-1)
@@ -19,4 +21,9 @@ type bencodeInfo struct {
 type bencodeTorrent struct {
 	Announce string
 	Info     bencodeInfo
+}
+
+func Open(r io.Reader) (*bencodeTorrent, error) {
+	bto := bencodeInfo{}
+	
 }
